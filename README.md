@@ -32,10 +32,10 @@ word count, and printing.
    - cd notepad-project
 
 ### ScreenShots
-**Light Mode**
+
 ![Light mode](/Images/Light.png)![Dark Mode](/Images/Dark.png)
 
-**Dark Mode**
+**Dark Mode****Light Mode**
 
 
 
