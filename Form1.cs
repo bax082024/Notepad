@@ -76,7 +76,28 @@ namespace Notepad
                 using (StreamReader reader = new StreamReader(openFileDialog.FileName))
                 {
                     richTextBox1.Text = reader.ReadToEnd();
+                    recentFiles.Add(openFileDialog.FileName);
+                    UpdateRecentFilesMenu();
                 }
+            }
+        }
+
+        private void UpdateRecentFilesMenu()
+        {
+            recentToolStripMenuItem.DropDownItems.Clear();
+            foreach (string file in recentFiles)
+            {
+                ToolStripMenuItem item = new ToolStripMenuItem(file);
+                item.Click += (s, e) => LoadFile(file);
+                recentToolStripMenuItem.DropDownItems.Add(item);
+            }
+        }
+
+        private void LoadFile(string filePath)
+        {
+            if (File.Exists(filePath))
+            {
+                richTextBox1.Text = File.ReadAllText(filePath);
             }
         }
 
@@ -209,6 +230,22 @@ namespace Notepad
                 {
                     richTextBox1.ForeColor = colorDialog.Color;
                 }
+            }
+        }
+
+        private void darkModeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (richTextBox1.BackColor == Color.White)
+            {
+                richTextBox1.BackColor = Color.Black;
+                richTextBox1.ForeColor = Color.White;
+                darkModeToolStripMenuItem.Checked = true;
+            }
+            else
+            {
+                richTextBox1.BackColor = Color.White;
+                richTextBox1.ForeColor = Color.Black;
+                darkModeToolStripMenuItem.Checked = false;
             }
         }
     }

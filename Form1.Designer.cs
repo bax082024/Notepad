@@ -35,6 +35,7 @@
             exitToolStripMenuItem = new ToolStripMenuItem();
             saveToolStripMenuItem = new ToolStripMenuItem();
             loadToolStripMenuItem = new ToolStripMenuItem();
+            recentToolStripMenuItem = new ToolStripMenuItem();
             editToolStripMenuItem1 = new ToolStripMenuItem();
             cutToolStripMenuItem = new ToolStripMenuItem();
             copyToolStripMenuItem = new ToolStripMenuItem();
@@ -46,6 +47,7 @@
             printToolStripMenuItem = new ToolStripMenuItem();
             formatToolStripMenuItem = new ToolStripMenuItem();
             fontToolStripMenuItem = new ToolStripMenuItem();
+            textColorToolStripMenuItem = new ToolStripMenuItem();
             richTextBox1 = new RichTextBox();
             saveFileDialog1 = new SaveFileDialog();
             openFileDialog1 = new OpenFileDialog();
@@ -60,7 +62,8 @@
             toolStripStatusLabel1 = new ToolStripStatusLabel();
             toolStrip1 = new ToolStrip();
             fontDialog1 = new FontDialog();
-            textColorToolStripMenuItem = new ToolStripMenuItem();
+            viewToolStripMenuItem = new ToolStripMenuItem();
+            darkModeToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             contextMenuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
@@ -68,7 +71,7 @@
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, editToolStripMenuItem1, formatToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, editToolStripMenuItem1, formatToolStripMenuItem, viewToolStripMenuItem });
             menuStrip1.Location = new Point(0, 25);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 24);
@@ -77,7 +80,7 @@
             // 
             // fileToolStripMenuItem
             // 
-            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { editToolStripMenuItem, exitToolStripMenuItem, saveToolStripMenuItem, loadToolStripMenuItem });
+            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { editToolStripMenuItem, exitToolStripMenuItem, saveToolStripMenuItem, loadToolStripMenuItem, recentToolStripMenuItem });
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             fileToolStripMenuItem.Size = new Size(37, 20);
             fileToolStripMenuItem.Text = "File";
@@ -87,7 +90,7 @@
             // 
             editToolStripMenuItem.Name = "editToolStripMenuItem";
             editToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+N";
-            editToolStripMenuItem.Size = new Size(141, 22);
+            editToolStripMenuItem.Size = new Size(180, 22);
             editToolStripMenuItem.Text = "New";
             editToolStripMenuItem.Click += editToolStripMenuItem_Click;
             // 
@@ -95,7 +98,7 @@
             // 
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             exitToolStripMenuItem.ShortcutKeyDisplayString = "Alt+F4";
-            exitToolStripMenuItem.Size = new Size(141, 22);
+            exitToolStripMenuItem.Size = new Size(180, 22);
             exitToolStripMenuItem.Text = "Exit";
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
@@ -103,7 +106,7 @@
             // 
             saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             saveToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+S";
-            saveToolStripMenuItem.Size = new Size(141, 22);
+            saveToolStripMenuItem.Size = new Size(180, 22);
             saveToolStripMenuItem.Text = "Save";
             saveToolStripMenuItem.Click += saveToolStripMenuItem_Click;
             // 
@@ -111,9 +114,15 @@
             // 
             loadToolStripMenuItem.Name = "loadToolStripMenuItem";
             loadToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+L";
-            loadToolStripMenuItem.Size = new Size(141, 22);
+            loadToolStripMenuItem.Size = new Size(180, 22);
             loadToolStripMenuItem.Text = "Load";
             loadToolStripMenuItem.Click += loadToolStripMenuItem_Click;
+            // 
+            // recentToolStripMenuItem
+            // 
+            recentToolStripMenuItem.Name = "recentToolStripMenuItem";
+            recentToolStripMenuItem.Size = new Size(180, 22);
+            recentToolStripMenuItem.Text = "Recent";
             // 
             // editToolStripMenuItem1
             // 
@@ -126,7 +135,7 @@
             // 
             cutToolStripMenuItem.Name = "cutToolStripMenuItem";
             cutToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+X";
-            cutToolStripMenuItem.Size = new Size(158, 22);
+            cutToolStripMenuItem.Size = new Size(180, 22);
             cutToolStripMenuItem.Text = "Cut";
             cutToolStripMenuItem.Click += cutToolStripMenuItem_Click;
             // 
@@ -134,7 +143,7 @@
             // 
             copyToolStripMenuItem.Name = "copyToolStripMenuItem";
             copyToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+C";
-            copyToolStripMenuItem.Size = new Size(158, 22);
+            copyToolStripMenuItem.Size = new Size(180, 22);
             copyToolStripMenuItem.Text = "Copy";
             copyToolStripMenuItem.Click += copyToolStripMenuItem_Click;
             // 
@@ -142,14 +151,14 @@
             // 
             pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
             pasteToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+V";
-            pasteToolStripMenuItem.Size = new Size(158, 22);
+            pasteToolStripMenuItem.Size = new Size(180, 22);
             pasteToolStripMenuItem.Text = "Paste";
             // 
             // undoToolStripMenuItem
             // 
             undoToolStripMenuItem.Name = "undoToolStripMenuItem";
             undoToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+Z";
-            undoToolStripMenuItem.Size = new Size(158, 22);
+            undoToolStripMenuItem.Size = new Size(180, 22);
             undoToolStripMenuItem.Text = "Undo";
             undoToolStripMenuItem.Click += undoToolStripMenuItem_Click;
             // 
@@ -157,7 +166,7 @@
             // 
             redoToolStripMenuItem.Name = "redoToolStripMenuItem";
             redoToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+Y";
-            redoToolStripMenuItem.Size = new Size(158, 22);
+            redoToolStripMenuItem.Size = new Size(180, 22);
             redoToolStripMenuItem.Text = "Redo";
             redoToolStripMenuItem.Click += redoToolStripMenuItem_Click;
             // 
@@ -165,7 +174,7 @@
             // 
             findToolStripMenuItem.Name = "findToolStripMenuItem";
             findToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+F";
-            findToolStripMenuItem.Size = new Size(158, 22);
+            findToolStripMenuItem.Size = new Size(180, 22);
             findToolStripMenuItem.Text = "Find";
             findToolStripMenuItem.Click += findToolStripMenuItem_Click;
             // 
@@ -173,7 +182,7 @@
             // 
             replaceToolStripMenuItem.Name = "replaceToolStripMenuItem";
             replaceToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+H";
-            replaceToolStripMenuItem.Size = new Size(158, 22);
+            replaceToolStripMenuItem.Size = new Size(180, 22);
             replaceToolStripMenuItem.Text = "Replace";
             replaceToolStripMenuItem.Click += replaceToolStripMenuItem_Click;
             // 
@@ -181,7 +190,7 @@
             // 
             printToolStripMenuItem.Name = "printToolStripMenuItem";
             printToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+P";
-            printToolStripMenuItem.Size = new Size(158, 22);
+            printToolStripMenuItem.Size = new Size(180, 22);
             printToolStripMenuItem.Text = "Print";
             printToolStripMenuItem.Click += printToolStripMenuItem_Click;
             // 
@@ -195,9 +204,16 @@
             // fontToolStripMenuItem
             // 
             fontToolStripMenuItem.Name = "fontToolStripMenuItem";
-            fontToolStripMenuItem.Size = new Size(180, 22);
+            fontToolStripMenuItem.Size = new Size(127, 22);
             fontToolStripMenuItem.Text = "Font";
             fontToolStripMenuItem.Click += fontDialog1_Apply;
+            // 
+            // textColorToolStripMenuItem
+            // 
+            textColorToolStripMenuItem.Name = "textColorToolStripMenuItem";
+            textColorToolStripMenuItem.Size = new Size(127, 22);
+            textColorToolStripMenuItem.Text = "Text Color";
+            textColorToolStripMenuItem.Click += textColorToolStripMenuItem_Click;
             // 
             // richTextBox1
             // 
@@ -288,12 +304,19 @@
             // 
             fontDialog1.Apply += fontDialog1_Apply;
             // 
-            // textColorToolStripMenuItem
+            // viewToolStripMenuItem
             // 
-            textColorToolStripMenuItem.Name = "textColorToolStripMenuItem";
-            textColorToolStripMenuItem.Size = new Size(180, 22);
-            textColorToolStripMenuItem.Text = "Text Color";
-            textColorToolStripMenuItem.Click += textColorToolStripMenuItem_Click;
+            viewToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { darkModeToolStripMenuItem });
+            viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            viewToolStripMenuItem.Size = new Size(44, 20);
+            viewToolStripMenuItem.Text = "View";
+            // 
+            // darkModeToolStripMenuItem
+            // 
+            darkModeToolStripMenuItem.Name = "darkModeToolStripMenuItem";
+            darkModeToolStripMenuItem.Size = new Size(180, 22);
+            darkModeToolStripMenuItem.Text = "Dark Mode";
+            darkModeToolStripMenuItem.Click += darkModeToolStripMenuItem_Click;
             // 
             // Form1
             // 
@@ -349,5 +372,8 @@
         private ToolStripMenuItem fontToolStripMenuItem;
         private FontDialog fontDialog1;
         private ToolStripMenuItem textColorToolStripMenuItem;
+        private ToolStripMenuItem recentToolStripMenuItem;
+        private ToolStripMenuItem viewToolStripMenuItem;
+        private ToolStripMenuItem darkModeToolStripMenuItem;
     }
 }
