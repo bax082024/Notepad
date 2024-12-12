@@ -31,7 +31,12 @@ word count, and printing.
    - git clone https://github.com/bax082024/Notepad.git
    - cd notepad-project
 
-###
+### ScreenShots
+**Light Mode**
+![Light mode](/Images/Light.png)
+
+**Dark Mode**
+![Dark Mode](/Images/Dark.png)
 
 
 
