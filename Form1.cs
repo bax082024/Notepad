@@ -26,7 +26,7 @@ namespace Notepad
                 string dicPath = Path.Combine(Application.StartupPath, $"Languages", "en_US.dic", "no_NO.dic");
 
 
-                // Initialize Hunspell
+                
                 hunspell = new Hunspell(affPath, dicPath);
 
                 MessageBox.Show("Hunspell initialized successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -218,14 +218,14 @@ namespace Notepad
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
-            // Split text by spaces, newlines, and carriage returns
+           
             int wordCount = richTextBox1.Text
                 .Split(new char[] { ' ', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries)
                 .Length;
             int line = richTextBox1.GetLineFromCharIndex(richTextBox1.SelectionStart) + 1;
             int column = richTextBox1.SelectionStart - richTextBox1.GetFirstCharIndexOfCurrentLine() + 1;
 
-            // Update the ToolStripStatusLabel
+            
             toolStripStatusLabel1.Text = $"Words: {wordCount}, Line: {line}, Column: {column}";
         }
 
