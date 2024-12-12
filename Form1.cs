@@ -248,5 +248,17 @@ namespace Notepad
                 darkModeToolStripMenuItem.Checked = false;
             }
         }
+
+        private void printPreviewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PrintPreviewDialog printPreviewDialog = new PrintPreviewDialog();
+            PrintDocument printDocument = new PrintDocument();
+            printDocument.PrintPage += (s, ev) =>
+            {
+                ev.Graphics.DrawString(richTextBox1.Text, richTextBox1.Font, Brushes.Black, ev.MarginBounds);
+            };
+            printPreviewDialog.Document = printDocument;
+            printPreviewDialog.ShowDialog();
+        }
     }
 }
