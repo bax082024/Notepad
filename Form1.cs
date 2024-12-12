@@ -22,12 +22,12 @@ namespace Notepad
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            richTextBox1.Clear();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
 
         private void cutToolStripMenuItem_Click(object sender, EventArgs e)
