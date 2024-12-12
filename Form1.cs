@@ -7,11 +7,13 @@ namespace Notepad
 {
     public partial class Form1 : Form
     {
+
         private List<string> recentFiles = new List<string>();
 
         public Form1()
         {
             InitializeComponent();
+
         }
 
         private Hunspell hunspell;
