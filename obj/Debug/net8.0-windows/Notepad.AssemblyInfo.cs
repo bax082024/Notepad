@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Notepad")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9a32aed81963669059fcdad438795f7170ff0b3c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3d34533f8350113e6acd94b8bba99544435c08e5")]
 [assembly: System.Reflection.AssemblyProductAttribute("Notepad")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Notepad")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

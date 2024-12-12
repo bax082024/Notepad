@@ -1,4 +1,5 @@
 using System.Drawing.Printing;
+using System.Windows.Forms;
 
 namespace Notepad
 {
@@ -110,8 +111,6 @@ namespace Notepad
 
         }
 
-        
-
         private void findToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string searchText = Microsoft.VisualBasic.Interaction.InputBox("Enter text to find:", "Find");
@@ -166,6 +165,17 @@ namespace Notepad
             {
                 redoToolStripMenuItem_Click(sender, e);
             }
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            int wordCount = richTextBox1.Text.Split(new char[] { ' ', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries).Length;
+            toolStripStatusLabel1.Text = $"Words: {wordCount}";
+        }
+
+        private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }
