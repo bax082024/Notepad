@@ -40,6 +40,12 @@ namespace Notepad
             richTextBox1.Copy();
         }
 
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Clear();
+        }
+
+
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -68,9 +74,20 @@ namespace Notepad
             }
         }
 
-        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        private void undoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            richTextBox1.Clear();
+            if (richTextBox1.CanUndo)
+            {
+                richTextBox1.Undo();
+            }
+        }
+
+        private void redoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (richTextBox1.CanRedo)
+            {
+                richTextBox1.Redo();
+            }
         }
     }
 }
