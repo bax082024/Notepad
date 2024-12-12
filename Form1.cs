@@ -286,18 +286,39 @@ namespace Notepad
 
         private void spellCheckToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using (Hunspell hunspell = new Hunspell("en_US.aff", "en_US.dic"))
+            if (hunspell == null)
             {
-                var words = richTextBox1.Text.Split(new char[] { ' ', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
-                foreach (string word in words)
+                MessageBox.Show("Hunspell is not initialized. Please check the dictionary files.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            var words = richTextBox1.Text.Split(new char[] { ' ', '\n', '\r', '.', ',', ';', ':' }, StringSplitOptions.RemoveEmptyEntries);
+
+            foreach (var word in words)
+            {
+                if (!hunspell.Spell(word))
                 {
-                    if (!hunspell.Spell(word))
+                    var suggestions = hunspell.Suggest(word);
+                    string suggestion = suggestions.Count > 0 ? suggestions[0] : "No suggestions";
+
+                    DialogResult result = MessageBox.Show(
+                        $"Misspelled word: {word}\nSuggestion: {suggestion}\nWould you like to correct it?",
+                        "Spell Check",
+                        MessageBoxButtons.YesNoCancel);
+
+                    if (result == DialogResult.Yes)
                     {
-                        MessageBox.Show($"Misspelled word: {word}");
+                        string correctedWord = Microsoft.VisualBasic.Interaction.InputBox("Enter the correct spelling:", "Correction", suggestion);
+                        richTextBox1.Text = richTextBox1.Text.Replace(word, correctedWord);
+                    }
+                    else if (result == DialogResult.Cancel)
+                    {
+                        break;
                     }
                 }
             }
         }
+
 
 
     }
