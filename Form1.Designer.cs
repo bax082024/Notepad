@@ -63,8 +63,8 @@
             copyToolStripMenuItem1 = new ToolStripMenuItem();
             statusStrip1 = new StatusStrip();
             toolStripStatusLabel1 = new ToolStripStatusLabel();
-            toolStrip1 = new ToolStrip();
             fontDialog1 = new FontDialog();
+            toolStripStatusLabel2 = new ToolStripStatusLabel();
             menuStrip1.SuspendLayout();
             contextMenuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
@@ -73,7 +73,7 @@
             // menuStrip1
             // 
             menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, editToolStripMenuItem1, formatToolStripMenuItem, viewToolStripMenuItem });
-            menuStrip1.Location = new Point(0, 25);
+            menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 24);
             menuStrip1.TabIndex = 1;
@@ -240,9 +240,9 @@
             // richTextBox1
             // 
             richTextBox1.Dock = DockStyle.Fill;
-            richTextBox1.Location = new Point(0, 49);
+            richTextBox1.Location = new Point(0, 24);
             richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(800, 379);
+            richTextBox1.Size = new Size(800, 404);
             richTextBox1.TabIndex = 2;
             richTextBox1.Text = "";
             richTextBox1.TextChanged += richTextBox1_TextChanged;
@@ -300,7 +300,7 @@
             // 
             // statusStrip1
             // 
-            statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1 });
+            statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel2, toolStripStatusLabel1 });
             statusStrip1.Location = new Point(0, 428);
             statusStrip1.Name = "statusStrip1";
             statusStrip1.Size = new Size(800, 22);
@@ -314,17 +314,15 @@
             toolStripStatusLabel1.Size = new Size(53, 17);
             toolStripStatusLabel1.Text = "Words: 0";
             // 
-            // toolStrip1
-            // 
-            toolStrip1.Location = new Point(0, 0);
-            toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(800, 25);
-            toolStrip1.TabIndex = 4;
-            toolStrip1.Text = "toolStrip1";
-            // 
             // fontDialog1
             // 
             fontDialog1.Apply += fontDialog1_Apply;
+            // 
+            // toolStripStatusLabel2
+            // 
+            toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            toolStripStatusLabel2.Size = new Size(57, 17);
+            toolStripStatusLabel2.Text = "BaxNotes";
             // 
             // Form1
             // 
@@ -334,7 +332,6 @@
             Controls.Add(richTextBox1);
             Controls.Add(statusStrip1);
             Controls.Add(menuStrip1);
-            Controls.Add(toolStrip1);
             MainMenuStrip = menuStrip1;
             Name = "Form1";
             Text = "Form1";
@@ -375,7 +372,6 @@
         private ToolStripMenuItem printToolStripMenuItem;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel toolStripStatusLabel1;
-        private ToolStrip toolStrip1;
         private ToolStripMenuItem formatToolStripMenuItem;
         private ToolStripMenuItem fontToolStripMenuItem;
         private FontDialog fontDialog1;
@@ -384,5 +380,6 @@
         private ToolStripMenuItem viewToolStripMenuItem;
         private ToolStripMenuItem darkModeToolStripMenuItem;
         private ToolStripMenuItem printPreviewToolStripMenuItem;
+        private ToolStripStatusLabel toolStripStatusLabel2;
     }
 }

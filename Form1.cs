@@ -218,7 +218,7 @@ namespace Notepad
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
-           
+            // Split text by spaces, newlines, and carriage returns
             int wordCount = richTextBox1.Text
                 .Split(new char[] { ' ', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries)
                 .Length;
