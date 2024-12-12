@@ -1,3 +1,5 @@
+using System.Drawing.Printing;
+
 namespace Notepad
 {
     public partial class Form1 : Form
@@ -87,6 +89,82 @@ namespace Notepad
             if (richTextBox1.CanRedo)
             {
                 richTextBox1.Redo();
+            }
+        }
+
+        private void printToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PrintDocument printDocument = new PrintDocument();
+            printDocument.PrintPage += (s, ev) =>
+            {
+                ev.Graphics.DrawString(richTextBox1.Text, new Font("Arial", 12), Brushes.Black, ev.MarginBounds);
+            };
+
+            PrintDialog printDialog = new PrintDialog();
+            printDialog.Document = printDocument;
+
+            if (printDialog.ShowDialog() == DialogResult.OK)
+            {
+                printDocument.Print();
+            }
+
+        }
+
+        
+
+        private void findToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string searchText = Microsoft.VisualBasic.Interaction.InputBox("Enter text to find:", "Find");
+            int index = richTextBox1.Text.IndexOf(searchText, StringComparison.OrdinalIgnoreCase);
+
+            if (index != -1)
+            {
+                richTextBox1.Select(index, searchText.Length);
+                richTextBox1.ScrollToCaret();
+            }
+            else
+            {
+                MessageBox.Show("Text not found!", "Find");
+            }
+        }
+
+        private void replaceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string searchText = Microsoft.VisualBasic.Interaction.InputBox("Enter text to replace:", "Replace");
+            string replaceText = Microsoft.VisualBasic.Interaction.InputBox("Replace with:", "Replace");
+
+            if (richTextBox1.Text.Contains(searchText))
+            {
+                richTextBox1.Text = richTextBox1.Text.Replace(searchText, replaceText);
+            }
+            else
+            {
+                MessageBox.Show("Text not found!", "Replace");
+            }
+        }
+
+        // Shortvuts
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.N) // New
+            {
+                richTextBox1.Clear();
+            }
+            else if (e.Control && e.KeyCode == Keys.S) // Save
+            {
+                saveToolStripMenuItem_Click(sender, e);
+            }
+            else if (e.Control && e.KeyCode == Keys.O) // Open
+            {
+                loadToolStripMenuItem_Click(sender, e);
+            }
+            else if (e.Control && e.KeyCode == Keys.Z) // Undo
+            {
+                undoToolStripMenuItem_Click(sender, e);
+            }
+            else if (e.Control && e.KeyCode == Keys.Y) // Redo
+            {
+                redoToolStripMenuItem_Click(sender, e);
             }
         }
     }

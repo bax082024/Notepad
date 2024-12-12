@@ -159,6 +159,7 @@
             findToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+F";
             findToolStripMenuItem.Size = new Size(180, 22);
             findToolStripMenuItem.Text = "Find";
+            findToolStripMenuItem.Click += findToolStripMenuItem_Click;
             // 
             // replaceToolStripMenuItem
             // 
@@ -166,6 +167,7 @@
             replaceToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+H";
             replaceToolStripMenuItem.Size = new Size(180, 22);
             replaceToolStripMenuItem.Text = "Replace";
+            replaceToolStripMenuItem.Click += replaceToolStripMenuItem_Click;
             // 
             // printToolStripMenuItem
             // 
@@ -173,6 +175,7 @@
             printToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+P";
             printToolStripMenuItem.Size = new Size(180, 22);
             printToolStripMenuItem.Text = "Print";
+            printToolStripMenuItem.Click += printToolStripMenuItem_Click;
             // 
             // richTextBox1
             // 
