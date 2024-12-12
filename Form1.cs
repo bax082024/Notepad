@@ -1,3 +1,4 @@
+using System.Data.Common;
 using System.Drawing.Printing;
 using System.Windows.Forms;
 
@@ -173,10 +174,14 @@ namespace Notepad
             int wordCount = richTextBox1.Text
                 .Split(new char[] { ' ', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries)
                 .Length;
+            int line = richTextBox1.GetLineFromCharIndex(richTextBox1.SelectionStart) + 1;
+            int column = richTextBox1.SelectionStart - richTextBox1.GetFirstCharIndexOfCurrentLine() + 1;
 
             // Update the ToolStripStatusLabel
-            toolStripStatusLabel1.Text = $"Words: {wordCount}";
+            toolStripStatusLabel1.Text = $"Words: {wordCount}, Line: {line}, Column: {column}";
         }
+
+
 
         private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
@@ -190,6 +195,17 @@ namespace Notepad
                 if (fontDialog.ShowDialog() == DialogResult.OK)
                 {
                     richTextBox1.Font = fontDialog.Font;
+                }
+            }
+        }
+
+        private void textColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (ColorDialog colorDialog = new ColorDialog())
+            {
+                if (colorDialog.ShowDialog() == DialogResult.OK)
+                {
+                    richTextBox1.ForeColor = colorDialog.Color;
                 }
             }
         }

@@ -60,6 +60,7 @@
             toolStripStatusLabel1 = new ToolStripStatusLabel();
             toolStrip1 = new ToolStrip();
             fontDialog1 = new FontDialog();
+            textColorToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             contextMenuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
@@ -186,7 +187,7 @@
             // 
             // formatToolStripMenuItem
             // 
-            formatToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { fontToolStripMenuItem });
+            formatToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { fontToolStripMenuItem, textColorToolStripMenuItem });
             formatToolStripMenuItem.Name = "formatToolStripMenuItem";
             formatToolStripMenuItem.Size = new Size(57, 20);
             formatToolStripMenuItem.Text = "Format";
@@ -287,6 +288,13 @@
             // 
             fontDialog1.Apply += fontDialog1_Apply;
             // 
+            // textColorToolStripMenuItem
+            // 
+            textColorToolStripMenuItem.Name = "textColorToolStripMenuItem";
+            textColorToolStripMenuItem.Size = new Size(180, 22);
+            textColorToolStripMenuItem.Text = "Text Color";
+            textColorToolStripMenuItem.Click += textColorToolStripMenuItem_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -340,5 +348,6 @@
         private ToolStripMenuItem formatToolStripMenuItem;
         private ToolStripMenuItem fontToolStripMenuItem;
         private FontDialog fontDialog1;
+        private ToolStripMenuItem textColorToolStripMenuItem;
     }
 }
