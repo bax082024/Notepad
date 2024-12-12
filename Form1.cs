@@ -169,7 +169,12 @@ namespace Notepad
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
-            int wordCount = richTextBox1.Text.Split(new char[] { ' ', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries).Length;
+            // Split text by spaces, newlines, and carriage returns
+            int wordCount = richTextBox1.Text
+                .Split(new char[] { ' ', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries)
+                .Length;
+
+            // Update the ToolStripStatusLabel
             toolStripStatusLabel1.Text = $"Words: {wordCount}";
         }
 

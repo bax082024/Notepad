@@ -56,6 +56,7 @@
             copyToolStripMenuItem1 = new ToolStripMenuItem();
             statusStrip1 = new StatusStrip();
             toolStripStatusLabel1 = new ToolStripStatusLabel();
+            toolStrip1 = new ToolStrip();
             menuStrip1.SuspendLayout();
             contextMenuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
@@ -64,7 +65,7 @@
             // menuStrip1
             // 
             menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, editToolStripMenuItem1 });
-            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Location = new Point(0, 25);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 24);
             menuStrip1.TabIndex = 1;
@@ -183,11 +184,12 @@
             // richTextBox1
             // 
             richTextBox1.Dock = DockStyle.Fill;
-            richTextBox1.Location = new Point(0, 24);
+            richTextBox1.Location = new Point(0, 49);
             richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(800, 426);
+            richTextBox1.Size = new Size(800, 379);
             richTextBox1.TabIndex = 2;
             richTextBox1.Text = "";
+            richTextBox1.TextChanged += richTextBox1_TextChanged;
             // 
             // saveFileDialog1
             // 
@@ -256,14 +258,23 @@
             toolStripStatusLabel1.Size = new Size(53, 17);
             toolStripStatusLabel1.Text = "Words: 0";
             // 
+            // toolStrip1
+            // 
+            toolStrip1.Location = new Point(0, 0);
+            toolStrip1.Name = "toolStrip1";
+            toolStrip1.Size = new Size(800, 25);
+            toolStrip1.TabIndex = 4;
+            toolStrip1.Text = "toolStrip1";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(statusStrip1);
             Controls.Add(richTextBox1);
+            Controls.Add(statusStrip1);
             Controls.Add(menuStrip1);
+            Controls.Add(toolStrip1);
             MainMenuStrip = menuStrip1;
             Name = "Form1";
             Text = "Form1";
@@ -304,5 +315,6 @@
         private ToolStripMenuItem printToolStripMenuItem;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel toolStripStatusLabel1;
+        private ToolStrip toolStrip1;
     }
 }
