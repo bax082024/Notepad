@@ -1,3 +1,4 @@
+using NHunspell;
 using System.Data.Common;
 using System.Drawing.Printing;
 using System.Windows.Forms;
@@ -12,6 +13,28 @@ namespace Notepad
         {
             InitializeComponent();
         }
+
+        private Hunspell hunspell;
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                string affPath = Path.Combine(Application.StartupPath, $"Languages", "en_US.aff", "no_NO.aff");
+                string dicPath = Path.Combine(Application.StartupPath, $"Languages", "en_US.dic", "no_NO.dic");
+
+
+                // Initialize Hunspell
+                hunspell = new Hunspell(affPath, dicPath);
+
+                MessageBox.Show("Hunspell initialized successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Failed to initialize Hunspell: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
 
 
 
@@ -260,5 +283,22 @@ namespace Notepad
             printPreviewDialog.Document = printDocument;
             printPreviewDialog.ShowDialog();
         }
+
+        private void spellCheckToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (Hunspell hunspell = new Hunspell("en_US.aff", "en_US.dic"))
+            {
+                var words = richTextBox1.Text.Split(new char[] { ' ', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+                foreach (string word in words)
+                {
+                    if (!hunspell.Spell(word))
+                    {
+                        MessageBox.Show($"Misspelled word: {word}");
+                    }
+                }
+            }
+        }
+
+
     }
 }

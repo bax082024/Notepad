@@ -13,4 +13,7 @@
     <SourceRoot Include="C:\Users\busch\.nuget\packages\" />
     <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
   </ItemGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgNHunspell Condition=" '$(PkgNHunspell)' == '' ">C:\Users\busch\.nuget\packages\nhunspell\1.2.5554.16953</PkgNHunspell>
+  </PropertyGroup>
 </Project>

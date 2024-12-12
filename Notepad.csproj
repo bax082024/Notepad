@@ -8,4 +8,12 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="NHunspell" Version="1.2.5554.16953" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Languages\" />
+  </ItemGroup>
+
 </Project>
