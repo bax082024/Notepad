@@ -44,6 +44,8 @@
             findToolStripMenuItem = new ToolStripMenuItem();
             replaceToolStripMenuItem = new ToolStripMenuItem();
             printToolStripMenuItem = new ToolStripMenuItem();
+            formatToolStripMenuItem = new ToolStripMenuItem();
+            fontToolStripMenuItem = new ToolStripMenuItem();
             richTextBox1 = new RichTextBox();
             saveFileDialog1 = new SaveFileDialog();
             openFileDialog1 = new OpenFileDialog();
@@ -57,6 +59,7 @@
             statusStrip1 = new StatusStrip();
             toolStripStatusLabel1 = new ToolStripStatusLabel();
             toolStrip1 = new ToolStrip();
+            fontDialog1 = new FontDialog();
             menuStrip1.SuspendLayout();
             contextMenuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
@@ -64,7 +67,7 @@
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, editToolStripMenuItem1 });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, editToolStripMenuItem1, formatToolStripMenuItem });
             menuStrip1.Location = new Point(0, 25);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 24);
@@ -181,6 +184,20 @@
             printToolStripMenuItem.Text = "Print";
             printToolStripMenuItem.Click += printToolStripMenuItem_Click;
             // 
+            // formatToolStripMenuItem
+            // 
+            formatToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { fontToolStripMenuItem });
+            formatToolStripMenuItem.Name = "formatToolStripMenuItem";
+            formatToolStripMenuItem.Size = new Size(57, 20);
+            formatToolStripMenuItem.Text = "Format";
+            // 
+            // fontToolStripMenuItem
+            // 
+            fontToolStripMenuItem.Name = "fontToolStripMenuItem";
+            fontToolStripMenuItem.Size = new Size(180, 22);
+            fontToolStripMenuItem.Text = "Font";
+            fontToolStripMenuItem.Click += fontDialog1_Apply;
+            // 
             // richTextBox1
             // 
             richTextBox1.Dock = DockStyle.Fill;
@@ -266,6 +283,10 @@
             toolStrip1.TabIndex = 4;
             toolStrip1.Text = "toolStrip1";
             // 
+            // fontDialog1
+            // 
+            fontDialog1.Apply += fontDialog1_Apply;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -316,5 +337,8 @@
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel toolStripStatusLabel1;
         private ToolStrip toolStrip1;
+        private ToolStripMenuItem formatToolStripMenuItem;
+        private ToolStripMenuItem fontToolStripMenuItem;
+        private FontDialog fontDialog1;
     }
 }

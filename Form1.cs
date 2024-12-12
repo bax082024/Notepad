@@ -182,5 +182,16 @@ namespace Notepad
         {
 
         }
+
+        private void fontDialog1_Apply(object sender, EventArgs e)
+        {
+            using (FontDialog fontDialog = new FontDialog())
+            {
+                if (fontDialog.ShowDialog() == DialogResult.OK)
+                {
+                    richTextBox1.Font = fontDialog.Font;
+                }
+            }
+        }
     }
 }
