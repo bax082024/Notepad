@@ -67,5 +67,10 @@ namespace Notepad
                 }
             }
         }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Clear();
+        }
     }
 }

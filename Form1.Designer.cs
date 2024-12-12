@@ -66,6 +66,7 @@
             editToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+N";
             editToolStripMenuItem.Size = new Size(180, 22);
             editToolStripMenuItem.Text = "New";
+            editToolStripMenuItem.Click += editToolStripMenuItem_Click;
             // 
             // exitToolStripMenuItem
             // 
