@@ -1,0 +1,17 @@
+C:\HjemmeKode\C-Sharp\MyProjects\Notepad\bin\Debug\net8.0-windows\Notepad.exe
+C:\HjemmeKode\C-Sharp\MyProjects\Notepad\bin\Debug\net8.0-windows\Notepad.deps.json
+C:\HjemmeKode\C-Sharp\MyProjects\Notepad\bin\Debug\net8.0-windows\Notepad.runtimeconfig.json
+C:\HjemmeKode\C-Sharp\MyProjects\Notepad\bin\Debug\net8.0-windows\Notepad.dll
+C:\HjemmeKode\C-Sharp\MyProjects\Notepad\bin\Debug\net8.0-windows\Notepad.pdb
+C:\HjemmeKode\C-Sharp\MyProjects\Notepad\obj\Debug\net8.0-windows\Notepad.Form1.resources
+C:\HjemmeKode\C-Sharp\MyProjects\Notepad\obj\Debug\net8.0-windows\Notepad.csproj.GenerateResource.cache
+C:\HjemmeKode\C-Sharp\MyProjects\Notepad\obj\Debug\net8.0-windows\Notepad.GeneratedMSBuildEditorConfig.editorconfig
+C:\HjemmeKode\C-Sharp\MyProjects\Notepad\obj\Debug\net8.0-windows\Notepad.AssemblyInfoInputs.cache
+C:\HjemmeKode\C-Sharp\MyProjects\Notepad\obj\Debug\net8.0-windows\Notepad.AssemblyInfo.cs
+C:\HjemmeKode\C-Sharp\MyProjects\Notepad\obj\Debug\net8.0-windows\Notepad.csproj.CoreCompileInputs.cache
+C:\HjemmeKode\C-Sharp\MyProjects\Notepad\obj\Debug\net8.0-windows\Notepad.sourcelink.json
+C:\HjemmeKode\C-Sharp\MyProjects\Notepad\obj\Debug\net8.0-windows\Notepad.dll
+C:\HjemmeKode\C-Sharp\MyProjects\Notepad\obj\Debug\net8.0-windows\refint\Notepad.dll
+C:\HjemmeKode\C-Sharp\MyProjects\Notepad\obj\Debug\net8.0-windows\Notepad.pdb
+C:\HjemmeKode\C-Sharp\MyProjects\Notepad\obj\Debug\net8.0-windows\Notepad.genruntimeconfig.cache
+C:\HjemmeKode\C-Sharp\MyProjects\Notepad\obj\Debug\net8.0-windows\ref\Notepad.dll
