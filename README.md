@@ -1,7 +1,7 @@
 # Notepad Project  :page_facing_up:
 
-A Windows Forms application built in C# that functions as a lightweight notepad.
-It provides basic text editing features with additional functionalities like dark mode,
+A Windows Forms application built in C# that functions as a basic notepad.
+It provides basic text editing features with additional functions like dark mode,
 word count, and printing.
 
 ## Features
