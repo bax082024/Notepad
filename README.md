@@ -33,10 +33,10 @@ word count, and printing.
 
 ### ScreenShots
 **Light Mode**
-![Light mode](/Images/Light.png)
+![Light mode](/Images/Light.png)![Dark Mode](/Images/Dark.png)
 
 **Dark Mode**
-![Dark Mode](/Images/Dark.png)
+
 
 
 
